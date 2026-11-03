@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevMind | Piensa antes de programar</title>
+<style>
+:root{--navy:#101b3b;--navy2:#17264d;--panel:#1d2d57;--pink:#ff78b7;--pink2:#ffacd2;--ink:#f5f7ff;--muted:#b9c4df;--line:#35466f;--good:#73dfb0;--warn:#ffd37b;--shadow:0 18px 45px #050b1c66}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0%,#263866 0,transparent 32%),var(--navy);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.55}
+button,input,textarea,select{font:inherit}button{cursor:pointer}.topbar{position:sticky;top:0;z-index:10;background:#101b3beF;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{max-width:1180px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:10px;font-size:1.3rem;font-weight:850;letter-spacing:-.5px}.brand-mark{width:36px;height:36px;border-radius:12px;background:var(--pink);color:var(--navy);display:grid;place-items:center;font-weight:950}.brand span:last-child{color:var(--pink)}.navlinks{display:flex;gap:8px;flex-wrap:wrap}.navlinks button,.ghost{border:1px solid transparent;background:transparent;color:var(--muted);padding:9px 14px;border-radius:11px;font-weight:700}.navlinks button.active,.navlinks button:hover{background:#ff78b71c;color:var(--pink2);border-color:#ff78b755}.container{max-width:1180px;margin:auto;padding:34px 22px 70px}.hero{display:grid;grid-template-columns:1.4fr .8fr;gap:25px;align-items:center;padding:26px 0 34px}.eyebrow{color:var(--pink2);font-size:.78rem;font-weight:800;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(2.2rem,5vw,4.3rem);line-height:1.04;letter-spacing:-2px;margin:12px 0}.hero h1 em{font-style:normal;color:var(--pink)}.hero p{color:var(--muted);max-width:650px;font-size:1.05rem}.hero-card,.panel,.exercise-card,.progress-card{background:linear-gradient(145deg,#1b2b53,#172447);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}.hero-card{padding:23px}.hero-card .big{font-size:2.5rem;font-weight:900;color:var(--pink)}.hero-card p{margin:4px 0;color:var(--muted);font-size:.92rem}.hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}.mini-stat{background:#0e1936;border:1px solid var(--line);padding:13px;border-radius:14px}.mini-stat strong{display:block;font-size:1.35rem}.mini-stat span{font-size:.78rem;color:var(--muted)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:20px 0}.section-head h2{margin:4px 0;font-size:1.8rem}.section-head p{margin:0;color:var(--muted)}.progress-card{padding:20px;margin:12px 0 30px}.progress-top{display:flex;justify-content:space-between;gap:12px;align-items:center}.progress-top strong{font-size:1.1rem}.progress-track{height:10px;background:#0d1731;border-radius:20px;overflow:hidden;margin:13px 0 8px}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--pink),#ffa9d1);border-radius:20px;transition:width .35s}.progress-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:.82rem}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0 20px}.filter{border:1px solid var(--line);background:#172447;color:var(--muted);padding:8px 13px;border-radius:999px}.filter.active{background:var(--pink);border-color:var(--pink);color:var(--navy);font-weight:800}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.exercise-card{padding:18px;box-shadow:none;transition:.2s;display:flex;flex-direction:column;min-height:220px}.exercise-card:hover{transform:translateY(-3px);border-color:#ff78b788}.card-top{display:flex;justify-content:space-between;align-items:center;gap:8px}.tag{font-size:.72rem;padding:4px 9px;border-radius:999px;background:#ff78b71c;color:var(--pink2);font-weight:800}.difficulty{font-size:.75rem;color:var(--muted)}.exercise-card h3{margin:13px 0 6px;font-size:1.1rem}.exercise-card p{margin:0 0 16px;color:var(--muted);font-size:.9rem;flex:1}.card-bottom{display:flex;justify-content:space-between;align-items:center;gap:10px;color:var(--muted);font-size:.8rem}.done{color:var(--good);font-weight:800}.primary{background:var(--pink);color:#111b38;border:0;padding:11px 17px;border-radius:12px;font-weight:850;box-shadow:0 7px 18px #ff78b72b}.primary:hover{background:var(--pink2);transform:translateY(-1px)}.secondary{background:#263861;color:var(--ink);border:1px solid #53658d;padding:10px 14px;border-radius:11px;font-weight:750}.secondary:hover{border-color:var(--pink);color:var(--pink2)}.workspace{display:none}.workspace.show{display:block}.listing.hide{display:none}.back{margin-bottom:18px}.work-head{display:flex;justify-content:space-between;align-items:start;gap:18px;margin-bottom:18px}.work-head h2{font-size:clamp(1.6rem,4vw,2.4rem);margin:5px 0}.work-head p{color:var(--muted);margin:0}.work-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(260px,.7fr);gap:17px}.panel{padding:22px;box-shadow:none}.panel h3{margin:0 0 12px}.statement{color:#e0e7fa}.example{background:#0e1936;border:1px solid var(--line);border-radius:13px;padding:12px 14px;margin:13px 0;color:#e6eaff;font-family:ui-monospace,monospace;font-size:.88rem}.label{display:block;color:var(--pink2);font-weight:800;font-size:.82rem;margin:15px 0 7px}textarea,input[type=text],select{width:100%;background:#0d1834;border:1px solid #42547e;color:var(--ink);padding:12px;border-radius:11px;outline:none}textarea:focus,input:focus,select:focus{border-color:var(--pink);box-shadow:0 0 0 3px #ff78b722}textarea{min-height:95px;resize:vertical}.feedback{margin-top:12px;padding:12px 14px;border-radius:12px;display:none}.feedback.show{display:block}.feedback.good{background:#73dfb018;border:1px solid #73dfb066;color:#b7f6d9}.feedback.try{background:#ffd37b18;border:1px solid #ffd37b66;color:#ffe2a8}.hint-box{background:#0e1936;border:1px dashed #65769f;padding:13px;border-radius:12px;margin:10px 0;color:#d9e2fb}.hint-box strong{color:var(--pink2)}.hint-list{display:grid;gap:8px}.step{display:flex;gap:10px;align-items:flex-start;padding:10px;background:#0e1936;border:1px solid var(--line);border-radius:11px;margin:8px 0}.step input{accent-color:var(--pink);margin-top:5px}.step label{color:#e2e9fa}.step small{display:block;color:var(--muted)}.locked{opacity:.48}.implementation{display:none;margin-top:15px}.implementation.show{display:block}.implementation pre{white-space:pre-wrap;overflow:auto;background:#0a132b;border:1px solid var(--line);border-radius:12px;padding:16px;color:#c9dcff;font-size:.84rem}.notice{font-size:.83rem;color:var(--muted)}.side-note{color:var(--muted);font-size:.9rem}.empty{color:var(--muted);padding:20px;text-align:center}.footer{border-top:1px solid var(--line);padding:24px;text-align:center;color:var(--muted);font-size:.82rem;margin-top:45px}
+@media(max-width:850px){.hero,.work-grid{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.nav{align-items:flex-start;flex-direction:column}.navlinks{width:100%}.navlinks button{flex:1}.container{padding:24px 15px 50px}.cards{grid-template-columns:1fr}.hero{padding-top:15px}.work-head{flex-direction:column}.progress-meta{gap:10px;flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<header class="topbar"><nav class="nav">
+  <div class="brand"><span class="brand-mark">D</span>Dev<span>Mind</span></div>
+  <div class="navlinks">
+    <button class="active" data-nav="all">Inicio</button>
+    <button data-nav="logic">Retos de lógica</button>
+    <button data-nav="algorithm">Ejercicios de algoritmos</button>
+    <button data-nav="progress">Mi progreso</button>
+  </div>
+</nav></header>
+<main class="container">
+<section class="listing" id="listing">
+  <div class="hero">
+    <div><div class="eyebrow">Piensa · organiza · resuelve</div><h1>Primero la lógica.<br><em>Después el código.</em></h1>
+      <p>Entrena tu forma de pensar como desarrollador. Comprende cada problema, encuentra patrones y diseña una solución paso a paso antes de abrir el editor.</p>
+      <button class="primary" onclick="scrollToExercises()">Explorar ejercicios <span aria-hidden="true">→</span></button>
+    </div>
+    <div class="hero-card"><div class="eyebrow">Tu espacio de aprendizaje</div><div class="big">Think first.</div><p>El código es el resultado de una buena idea, no el comienzo.</p>
+      <div class="hero-stats"><div class="mini-stat"><strong id="heroDone">0/10</strong><span>Actividades completadas</span></div><div class="mini-stat"><strong id="heroPercent">0%</strong><span>Progreso general</span></div></div>
+    </div>
+  </div>
+  <section class="progress-card" id="progressPanel">
+    <div class="progress-top"><strong>Tu progreso de aprendizaje</strong><span id="progressCount">0 de 10 completados</span></div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-meta"><span id="progressMessage">Cada reto resuelto te acerca a pensar mejor.</span><span id="progressPercent">0%</span></div>
+  </section>
+  <div id="exerciseArea">
+    <div class="section-head"><div><div class="eyebrow">Entrena tu pensamiento</div><h2 id="listTitle">Explora los ejercicios</h2><p>10 actividades para practicar desde lo esencial hasta desafíos más complejos.</p></div></div>
+    <div class="filters">
+      <button class="filter active" data-filter="all">Todos (10)</button>
+      <button class="filter" data-filter="logic">Retos de lógica (5)</button>
+      <button class="filter" data-filter="algorithm">Algoritmos (5)</button>
+    </div>
+    <div class="cards" id="cards"></div>
+  </div>
+</section>
+<section class="workspace" id="workspace">
+  <button class="secondary back" onclick="backToList()">← Volver a los ejercicios</button>
+  <div id="workContent"></div>
+</section>
+</main>
+<footer class="footer">DevMind · Aprende a resolver problemas antes de programar.</footer>
+<script>
+// Banco de actividades: los retos validan una respuesta; los algoritmos validan la planificación.
+const activities = [
+ {id:1,type:"logic",title:"El número misterioso",level:"Fácil",context:"Una máquina guarda un número secreto. Sabes que es mayor que 10, menor que 20 y divisible entre 3. Debes descubrirlo usando las pistas.",statement:"¿Qué número cumple las tres condiciones?",example:"Rango: 11 a 19\\nCondición: múltiplo de 3",answer:["12","15","18"],hints:["Primero enumera los múltiplos de 3 cercanos al rango.","Los candidatos posibles son 12, 15 y 18.","Los tres cumplen: hay más de una respuesta correcta."],explain:"Los múltiplos de 3 entre 10 y 20 son 12, 15 y 18. Como el enunciado no agrega otra condición, cualquiera de ellos es válido. Identificar que puede haber varias soluciones también es razonar correctamente."},
+ {id:2,type:"logic",title:"Ordena las tareas",level:"Fácil",context:"Un robot debe preparar un sándwich. Tiene que poner el relleno dentro del pan y finalmente servirlo. Si sigue un orden incorrecto, el resultado no queda bien.",statement:"¿Cuál es el orden lógico? Escribe las letras separadas por comas: A) servir, B) abrir el pan, C) poner el relleno, D) cerrar el pan.",example:"Formato esperado: B, C, D, A",answer:["b,c,d,a","b c d a"],hints:["Piensa qué acción permite acceder al interior del pan.","El relleno debe quedar dentro antes de cerrar.","Servir ocurre cuando el sándwich ya está listo."],explain:"Primero se abre el pan, luego se coloca el relleno, se cierra y al final se sirve. La secuencia es B, C, D, A. En programación, ordenar instrucciones evita ejecutar acciones antes de tener sus requisitos."},
+ {id:3,type:"logic",title:"Detecta el patrón",level:"Medio",context:"Una secuencia crece siguiendo una regla constante. Encontrar la regla permite anticipar el siguiente valor sin calcular todos los anteriores.",statement:"Completa la secuencia: 2, 5, 8, 11, __. ¿Qué número sigue?",example:"Cada término aumenta en la misma cantidad.",answer:["14"],hints:["Compara el segundo número con el primero.","La diferencia entre términos consecutivos se mantiene.","Suma 3 al último valor."],explain:"La secuencia aumenta de 3 en 3: 2→5→8→11. Por tanto, 11 + 3 = 14. Reconocer patrones es útil para detectar ciclos y regularidades."},
+ {id:4,type:"logic",title:"La decisión correcta",level:"Medio",context:"Una aplicación permite entrar a una actividad si la persona tiene una invitación o está registrada. Basta con cumplir una de las dos condiciones.",statement:"Si alguien no tiene invitación, pero sí está registrado, ¿puede entrar? Responde sí o no y explica brevemente.",example:"Regla: invitación O registro = acceso.",answer:["si","sí"],hints:["La palabra “o” representa que basta una condición verdadera.","Revisa cada condición por separado.","Aunque invitación sea falsa, registro es verdadero."],explain:"Sí. La condición usa un OR lógico: si al menos una de las dos opciones es verdadera, se permite el acceso. No se exige que ambas sean verdaderas."},
+ {id:5,type:"logic",title:"La caja de las monedas",level:"Difícil",context:"Tienes 3 cajas etiquetadas como 'solo monedas de oro', 'solo monedas de plata' y 'oro y plata'. Todas las etiquetas están equivocadas. Puedes sacar una moneda de una sola caja para empezar a corregirlas.",statement:"¿De qué caja debes sacar la moneda primero?",example:"Todas las etiquetas son incorrectas. Solo puedes extraer una moneda de una caja.",answer:["oro y plata","oro y plata","mixta","la caja etiquetada oro y plata"],hints:["Busca una etiqueta que garantice que el contenido no coincide con ella.","La caja marcada “oro y plata” no puede ser mixta.","Una moneda de esa caja revela cuál de los dos metales contiene."],explain:"Debes elegir la caja etiquetada “oro y plata”. Como todas las etiquetas están mal, esa caja contiene solo oro o solo plata. La moneda extraída identifica su contenido y, con la regla de que todas las etiquetas son incorrectas, puedes deducir las otras dos."},
+ {id:6,type:"algorithm",title:"Promedio de tres notas",level:"Fácil",context:"Un sistema académico necesita calcular el promedio de tres calificaciones y mostrar el resultado al estudiante.",statement:"Diseña los pasos para recibir tres notas, calcular el promedio y mostrarlo.",example:"Entrada: 4, 3, 5\\nSalida: 4",input:"Tres notas numéricas.",process:"Sumar las tres notas y dividir el total entre 3.",output:"Mostrar el promedio calculado.",edge:"Verificar que se hayan ingresado tres notas válidas y que estén dentro del rango permitido (por ejemplo, 0 a 5).",code:"const nota1 = 4, nota2 = 3, nota3 = 5;\\nconst promedio = (nota1 + nota2 + nota3) / 3;\\nconsole.log('Promedio:', promedio);"},
+ {id:7,type:"algorithm",title:"¿Par o impar?",level:"Fácil",context:"Una herramienta recibe un número entero y debe indicar si es par o impar. Es una decisión basada en el residuo de una división.",statement:"Planifica cómo identificar si un número es par o impar.",example:"Entrada: 7\\nSalida: Impar",input:"Un número entero.",process:"Calcular el residuo de dividir el número entre 2. Si es 0, es par; de lo contrario, impar.",output:"Mostrar “Par” o “Impar”.",edge:"Definir qué hacer si el dato está vacío o no es un número entero.",code:"const numero = 7;\\nif (numero % 2 === 0) {\\n  console.log('Par');\\n} else {\\n  console.log('Impar');\\n}"},
+ {id:8,type:"algorithm",title:"Contar mayores de edad",level:"Medio",context:"Un formulario registra las edades de un grupo. Se necesita saber cuántas personas tienen 18 años o más.",statement:"Describe un algoritmo que recorra una lista de edades y cuente las que son mayores o iguales a 18.",example:"Entrada: [15, 18, 21, 16]\\nSalida: 2 personas",input:"Una lista de edades.",process:"Iniciar un contador en cero, recorrer la lista y sumar uno cuando la edad sea mayor o igual a 18.",output:"Mostrar el contador al terminar el recorrido.",edge:"Considerar lista vacía, edades negativas o valores que no sean números.",code:"const edades = [15, 18, 21, 16];\\nlet contador = 0;\\nfor (const edad of edades) {\\n  if (edad >= 18) contador++;\\n}\\nconsole.log('Mayores de edad:', contador);"},
+ {id:9,type:"algorithm",title:"Encontrar el mayor valor",level:"Medio",context:"Una tienda guarda las ventas de varios días y quiere identificar el valor más alto para analizar su mejor jornada.",statement:"Planifica los pasos para encontrar el número mayor dentro de una lista.",example:"Entrada: [120, 350, 200, 180]\\nSalida: 350",input:"Una lista de números.",process:"Tomar el primer valor como máximo provisional. Comparar los demás y actualizar el máximo cuando se encuentre uno mayor.",output:"Mostrar el máximo encontrado.",edge:"Comprobar que la lista no esté vacía y decidir cómo tratar valores no numéricos.",code:"const ventas = [120, 350, 200, 180];\\nlet mayor = ventas[0];\\nfor (const venta of ventas) {\\n  if (venta > mayor) mayor = venta;\\n}\\nconsole.log('Mayor venta:', mayor);"},
+ {id:10,type:"algorithm",title:"Control de acceso",level:"Difícil",context:"Una plataforma permite iniciar una sesión cuando el usuario escribe correctamente su nombre y contraseña. Si uno de los datos no coincide, debe mostrar un mensaje de error.",statement:"Diseña el flujo de validación de credenciales antes de mostrar la implementación.",example:"Entrada: usuario correcto + contraseña correcta\\nSalida: Acceso permitido",input:"Nombre de usuario y contraseña ingresados; además, los datos registrados para comparar.",process:"Comparar ambos datos ingresados con los registrados. Permitir el acceso únicamente si las dos comparaciones son verdaderas.",output:"Mostrar “Acceso permitido” o “Datos incorrectos”.",edge:"Validar campos vacíos, espacios adicionales y evitar revelar cuál credencial específica falló.",code:"const usuarioGuardado = 'devmind';\\nconst claveGuardada = 'abc123';\\nconst usuario = 'devmind';\\nconst clave = 'abc123';\\nif (usuario === usuarioGuardado && clave === claveGuardada) {\\n  console.log('Acceso permitido');\\n} else {\\n  console.log('Datos incorrectos');\\n}"}
+];
+let completed = new Set(JSON.parse(localStorage.getItem("devmind_completed") || "[]"));
+let currentFilter = "all", currentActivity = null, hintCount = {};
+const cards = document.getElementById("cards");
+function renderCards(){
+ const filtered=activities.filter(a=>currentFilter==="all"||a.type===currentFilter);
+ cards.innerHTML=filtered.map(a=>`<article class="exercise-card"><div class="card-top"><span class="tag">${a.type==="logic"?"Reto de lógica":"Algoritmo"}</span><span class="difficulty">${a.level}</span></div><h3>${a.title}</h3><p>${a.context}</p><div class="card-bottom"><span>${completed.has(a.id)?'<span class="done">✓ Completado</span>':'Por resolver'}</span><button class="secondary" onclick="openActivity(${a.id})">${completed.has(a.id)?"Repasar":"Comenzar"} →</button></div></article>`).join("");
+ updateProgress();
+}
+function updateProgress(){
+ const n=completed.size,p=Math.round(n/activities.length*100);
+ document.getElementById("progressFill").style.width=p+"%";
+ document.getElementById("progressCount").textContent=`${n} de ${activities.length} completados`;
+ document.getElementById("progressPercent").textContent=p+"%";
+ document.getElementById("heroDone").textContent=n+"/"+activities.length;
+ document.getElementById("heroPercent").textContent=p+"%";
+ document.getElementById("progressMessage").textContent=p===100?"¡Excelente! Has completado todas las actividades.":n===0?"Cada reto resuelto te acerca a pensar mejor.":"¡Buen trabajo! Sigue construyendo tu lógica paso a paso.";
+}
+function scrollToExercises(){document.getElementById("exerciseArea").scrollIntoView({behavior:"smooth"});}
+function backToList(){document.getElementById("workspace").classList.remove("show");document.getElementById("listing").classList.remove("hide");document.querySelectorAll("[data-nav]").forEach(b=>b.classList.remove("active"));document.querySelector('[data-nav="all"]').classList.add("active");renderCards();window.scrollTo({top:0,behavior:"smooth"});}
+function openActivity(id){
+ currentActivity=activities.find(a=>a.id===id);hintCount[id]=hintCount[id]||0;
+ document.getElementById("listing").classList.add("hide");document.getElementById("workspace").classList.add("show");
+ document.querySelectorAll("[data-nav]").forEach(b=>b.classList.remove("active"));
+ document.querySelector(`[data-nav="${currentActivity.type}"]`).classList.add("active");
+ renderActivity();window.scrollTo({top:0,behavior:"smooth"});
+}
+function renderActivity(){
+ const a=currentActivity,done=completed.has(a.id);
+ let html=`<div class="work-head"><div><div class="eyebrow">${a.type==="logic"?"Reto de lógica":"Ejercicio de algoritmos"} · ${a.level}</div><h2>${a.title}</h2><p>${a.context}</p></div><span class="tag">${done?"Completado":"En progreso"}</span></div>
+ <div class="work-grid"><div class="panel"><h3>El problema</h3><p class="statement">${a.statement}</p><div class="example">${a.example.replaceAll("\\n","<br>")}</div>`;
+ if(a.type==="logic"){
+ html+=`<label class="label" for="answer">Tu respuesta o razonamiento</label><textarea id="answer" placeholder="Escribe aquí tu respuesta y, si puedes, explica por qué..."></textarea><button class="primary" onclick="checkLogic()">Verificar respuesta</button><div id="feedback" class="feedback"></div>
+ <div class="section-head"><div><h3>Pistas progresivas</h3><p>Desbloquea una pista cuando la necesites.</p></div><span class="tag" id="hintCounter">${hintCount[a.id]||0}/${a.hints.length}</span></div><div id="hints" class="hint-list">${a.hints.slice(0,hintCount[a.id]||0).map((h,i)=>`<div class="hint-box"><strong>Pista ${i+1}:</strong> ${h}</div>`).join("")}</div><button class="secondary" onclick="revealHint()" id="hintButton">${(hintCount[a.id]||0)>=a.hints.length?"Todas las pistas desbloqueadas":"Desbloquear siguiente pista"}</button>
+ <div id="explanation" class="feedback good ${done?"show":""}"><strong>Razonamiento:</strong> ${a.explain}</div>`;
+ }else{
+ html+=`<p class="notice">Antes de ver el código, completa las cuatro etapas de planificación. Puedes escribir con tus propias palabras.</p>
+ <label class="label" for="planInput">1. Entrada · ¿Qué datos necesitas?</label><textarea id="planInput" placeholder="Describe los datos que recibe el algoritmo...">${a.input}</textarea>
+ <label class="label" for="planProcess">2. Procesamiento · ¿Qué operaciones o decisiones realizarás?</label><textarea id="planProcess" placeholder="Explica la lógica paso a paso...">${a.process}</textarea>
+ <label class="label" for="planOutput">3. Salida · ¿Qué resultado debe entregar?</label><textarea id="planOutput" placeholder="Indica qué se mostrará...">${a.output}</textarea>
+ <label class="label" for="planEdge">4. Casos límite · ¿Qué situaciones especiales revisarías?</label><textarea id="planEdge" placeholder="Piensa en datos vacíos, inválidos o extremos...">${a.edge}</textarea>
+ <button class="primary" onclick="verifyPlan()">Verificar mi planificación</button><div id="feedback" class="feedback"></div>
+ <div class="implementation ${done?"show":""}" id="implementation"><h3>Implementación de referencia</h3><p class="notice">Ahora que has planificado la solución, puedes comparar tu lógica con este ejemplo en JavaScript.</p><pre>${escapeHtml(a.code)}</pre><button class="secondary" onclick="markComplete()">Marcar como completado</button></div>`;
+ }
+ html+=`</div><aside class="panel"><h3>Guía de aprendizaje</h3><p class="side-note">No te apresures a programar. Lee el contexto, identifica qué información tienes y decide qué debe ocurrir con ella.</p><div class="step"><span class="tag">01</span><div><strong>Comprende</strong><small>Explica el problema con tus palabras.</small></div></div><div class="step"><span class="tag">02</span><div><strong>Descompón</strong><small>Separa los datos, las acciones y el resultado.</small></div></div><div class="step"><span class="tag">03</span><div><strong>Comprueba</strong><small>Prueba tu razonamiento con el ejemplo y los casos límite.</small></div></div><div class="step"><span class="tag">04</span><div><strong>Programa</strong><small>Solo después convierte la solución en código.</small></div></div><hr style="border:0;border-top:1px solid var(--line);margin:18px 0"><div class="side-note"><strong>Tu avance</strong><p>${done?"Esta actividad ya está registrada como completada. Puedes repasarla cuando quieras.":"Al verificar correctamente tu razonamiento podrás registrar esta actividad como completada."}</p></div></aside></div>`;
+ document.getElementById("workContent").innerHTML=html;
+}
+function escapeHtml(s){return s.replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");}
+function showFeedback(message,good){const f=document.getElementById("feedback");f.className="feedback show "+(good?"good":"try");f.textContent=message;}
+function checkLogic(){
+ const a=currentActivity,v=document.getElementById("answer").value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+ if(!v){showFeedback("Escribe una respuesta antes de verificarla. Puedes usar las pistas si lo necesitas.",false);return;}
+ const accepted=a.answer.some(x=>v===x.normalize("NFD").replace(/[\u0300-\u036f]/g,"") || (a.id===1&&["12","15","18"].some(n=>v.includes(n))));
+ if(accepted){completed.add(a.id);save();showFeedback("¡Muy bien! Tu respuesta coincide con una solución válida. Revisa la explicación para comprender el razonamiento.",true);document.getElementById("explanation").classList.add("show");document.getElementById("explanation").innerHTML="<strong>Razonamiento:</strong> "+a.explain;document.querySelector(".work-head .tag").textContent="Completado";}else{showFeedback("Todavía no coincide con la respuesta esperada. Revisa las condiciones del enunciado, prueba otra vez o desbloquea una pista.",false);}
+}
+function revealHint(){
+ const a=currentActivity;if(hintCount[a.id]>=a.hints.length)return;hintCount[a.id]++;
+ document.getElementById("hintCounter").textContent=hintCount[a.id]+"/"+a.hints.length;
+ document.getElementById("hints").innerHTML=a.hints.slice(0,hintCount[a.id]).map((h,i)=>`<div class="hint-box"><strong>Pista ${i+1}:</strong> ${h}</div>`).join("");
+ if(hintCount[a.id]>=a.hints.length)document.getElementById("hintButton").textContent="Todas las pistas desbloqueadas";
+}
+function verifyPlan(){
+ const a=currentActivity,vals=["planInput","planProcess","planOutput","planEdge"].map(id=>document.getElementById(id).value.trim());
+ const feedback=document.getElementById("feedback");
+ if(vals.some(v=>v.length<8)){showFeedback("Completa las cuatro etapas con una explicación breve. Cada una debe tener información suficiente para entender tu plan.",false);return;}
+ completed.add(a.id);save();
+ feedback.className="feedback show good";feedback.innerHTML="<strong>¡Planificación registrada!</strong> Has descrito las entradas, el procesamiento, la salida y los casos límite. Compara ahora tu propuesta con la implementación de referencia.";
+ document.getElementById("implementation").classList.add("show");document.querySelector(".work-head .tag").textContent="Completado";
+}
+function markComplete(){completed.add(currentActivity.id);save();showFeedback("Actividad completada. ¡Buen trabajo!",true);}
+function save(){localStorage.setItem("devmind_completed",JSON.stringify([...completed]));updateProgress();}
+document.querySelectorAll("[data-filter]").forEach(b=>b.addEventListener("click",()=>{currentFilter=b.dataset.filter;document.querySelectorAll("[data-filter]").forEach(x=>x.classList.toggle("active",x===b));renderCards();}));
+document.querySelectorAll("[data-nav]").forEach(b=>b.addEventListener("click",()=>{
+ const target=b.dataset.nav;document.querySelectorAll("[data-nav]").forEach(x=>x.classList.toggle("active",x===b));
+ if(target==="progress"){document.getElementById("progressPanel").scrollIntoView({behavior:"smooth"});return;}
+ if(target==="all"){currentFilter="all";}else{currentFilter=target;}
+ document.querySelectorAll("[data-filter]").forEach(x=>x.classList.toggle("active",x.dataset.filter===currentFilter));backToList();currentFilter=target==="all"?"all":target;document.querySelectorAll("[data-filter]").forEach(x=>x.classList.toggle("active",x.dataset.filter===currentFilter));renderCards();
+}));
+renderCards();
+</script>
+</body>
+</html>
